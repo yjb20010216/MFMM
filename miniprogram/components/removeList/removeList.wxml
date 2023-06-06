@@ -1,0 +1,12 @@
+<!--components/removeList/removeList.wxml-->
+<movable-area class="area">
+    <movable-view class="view" direction="horizontal">
+        {{userMessage.nickName}}
+        <text>好友申请</text>
+    </movable-view>
+    <navigator url="{{'/pages/detail/detail?userId='+userMessage._id}}" open-type="navigate">
+        <image src="{{userMessage.userPhoto}}" />
+    </navigator>
+    <view class="delete" bindtap="handleDelMessage">删除</view>
+    <view class="agree" bindtap="handleAddFriend">同意</view>
+</movable-area>

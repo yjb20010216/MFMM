@@ -1,0 +1,6 @@
+<!--pages/editUserInfo/weixin/weiixn.wxml-->
+<!-- 暂未完成表单校验 ？？？ -->
+<input type="text" value="{{weixinNumber}}" bindinput="handleText"/>
+<button bindtap="handleBtn">确认修改</button>
+
+

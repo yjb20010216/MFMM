@@ -1,0 +1,22 @@
+/* pages/message/message.wxss */
+.message {
+    padding: 20rpx;
+}
+.noMessage {
+    width: 100%;
+    text-align: center;
+    margin-top: 400rpx;
+}
+.noMessage .icon-miaomiaozanwuxiaoxi {
+    font-size: 20px;
+}
+.noMessage-text {
+    margin: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-left: 13rpx;
+}
+
+.message-text {
+    margin: 30rpx;
+}

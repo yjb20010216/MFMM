@@ -1,0 +1,11 @@
+<!--pages/message/message.wxml-->
+<view class="message" wx:if="{{logined}}">
+    <view wx:if="{{!userMessage.length}}" class="noMessage">
+        <text class="iconfont icon-miaomiaozanwuxiaoxi"></text>
+        <text class="noMessage-text">暂无消息：</text>
+    </view>
+    <view wx:else>
+        <text class="message-text">消息列表：</text>
+        <removeList wx:for="{{userMessage}}" wx:key="inddex" messageId="{{item}}" bindmyevent="onMyEvent"></removeList>
+    </view>
+</view>

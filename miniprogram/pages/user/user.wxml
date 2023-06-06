@@ -1,0 +1,41 @@
+<!--pages/user/user.wxml-->
+<view class="user">
+    <view class="user-info">
+        <image src="{{userPhoto}}" bindtap="updateUserPhoto"/>
+        <text wx:if="{{logged}}" bindtap="updateUserNickName">欢迎你：{{nickName}}</text>
+        <view wx:else>
+            <block wx:if="{{!hasUserInfo}}">
+                <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile" disabled="{{disabled}}"> 使用微信账号登录 </button>
+                <button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo" disabled="{{disabled}}"> 使用微信账号登录 </button>
+            </block>
+        </view>
+    </view>
+
+    <view wx:if="{{logged}}" class="user-list">
+        <navigator url="../editUserInfo/editUserInfo" open-type="navigate">
+            <view class="user-list-item">
+                <text>编辑个人信息</text>
+                <text class="iconfont icon-miaomiaoyoujiantou"></text>
+            </view>
+        </navigator>
+        <navigator url="../friendsList/friendsList" open-type="navigate">
+            <view class="user-list-item">
+                <text>查看好友列表</text>
+                <text class="iconfont icon-miaomiaoyoujiantou"></text>
+            </view>
+        </navigator>
+        <navigator url="{{ '../detail/detail?userId=' + id }}" open-type="navigate">
+            <view class="user-list-item">
+                <text>个人主页</text>
+                <text class="iconfont icon-miaomiaoyoujiantou"></text>
+            </view>
+        </navigator>
+        <navigator url="{{ '../content/content?userId=' + id }}" open-type="navigate">
+            <view class="user-list-item">
+                <text>发布我的足迹</text>
+                <text class="iconfont icon-miaomiaoyoujiantou"></text>
+            </view>
+        </navigator>
+    </view>
+
+</view>

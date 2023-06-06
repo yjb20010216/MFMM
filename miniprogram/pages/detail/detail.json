@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "callPhone": "/components/callPhone/callPhone",
+        "copyText": "/components/copyText/copyText"
+    },
+    "navigationBarTitleText": "用户主页"
+}

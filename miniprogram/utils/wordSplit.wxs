@@ -1,0 +1,9 @@
+
+var wordSplit = function(word){
+  if( word.length > 6 ){
+    word = word.substring(0,6) + '...';
+  }
+  return word;
+};
+
+module.exports.wordSplit = wordSplit;

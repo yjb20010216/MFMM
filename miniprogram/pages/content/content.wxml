@@ -1,0 +1,18 @@
+<!--pages/content/content.wxml-->
+<view class="content">
+    <view class="publish">
+        <button class="publishContent" bindtap="handlePublish">发布内容</button>
+    </view>
+    <view>
+        <textarea type="text" show-confirm-bar="{{false}}" confirm-type="send" confirm-hold="{{true}}" hold-keyboard="{{false}}" cursor-spacing="{{50}}" auto-height="{{true}}" placeholder="记录这一刻，晒给懂你的人" bindinput="eventhandle" value="{{contentWord}}"/>
+        <text class=" iconfont icon-miaomiaotupian" bindtap="handlePhoto"></text>
+    </view>
+    <view class="contentImage">
+        <view wx:for="{{contentPhoto}}" wx:key="index">
+            <image src="{{item.tempFilePath}}" bindlongpress="DeleteImage" bindtap="PreviewImage" data-index="{{index}}" class="{{isDeleteImage ? 'delteImage' : ''}}">
+            </image>
+            <text wx:if="{{isDeleteImage}}" bindtap="handleIconDel" class="iconfont icon-miaomiaojiufuqianbaoicon08" 
+            data-index="{{index}}"></text>
+        </view>
+    </view>
+</view>

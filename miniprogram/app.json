@@ -1,0 +1,66 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/message/message",
+        "pages/near/near",
+        "pages/user/user",
+        "pages/editUserInfo/editUserInfo",
+        "pages/friendsList/friendsList",
+        "pages/detail/detail",
+        "pages/editUserInfo/head/head",
+        "pages/editUserInfo/location/location",
+        "pages/editUserInfo/name/name",
+        "pages/editUserInfo/phone/phone",
+        "pages/editUserInfo/signature/signature",
+        "pages/editUserInfo/weixin/weiixn",
+        "pages/chatMessage/chatMessage",
+        "pages/content/content"
+    ],
+    "tabBar": {
+        "color": "#bfbfbf",
+        "selectedColor": "#937bf5",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./images/tabbar/首页 (1).png",
+                "selectedIconPath": "./images/tabbar/首页.png"
+            },
+            {
+                "pagePath": "pages/near/near",
+                "text": "附近",
+                "iconPath": "./images/tabbar/附近的人 (1).png",
+                "selectedIconPath": "./images/tabbar/附近的人.png"
+            },
+            {
+                "pagePath": "pages/message/message",
+                "text": "消息",
+                "iconPath": "./images/tabbar/消息 (1).png",
+                "selectedIconPath": "./images/tabbar/消息.png"
+            },
+            {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "./images/tabbar/我的 (1).png",
+                "selectedIconPath": "./images/tabbar/我的.png"
+            }
+        ]
+    },
+    "window": {
+        "backgroundColor": "#F6F6F6",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#937bf5",
+        "navigationBarTitleText": "喵喵的喵星人",
+        "navigationBarTextStyle": "white"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序接口的效果设置"
+        }
+    },
+    "requiredPrivateInfos": [
+        "getLocation"
+    ],
+    "sitemapLocation": "sitemap.json",
+    "style": "v2"
+}

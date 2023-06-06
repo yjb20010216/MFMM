@@ -1,0 +1,33 @@
+<!--pages/chatMessage/chatMessage.wxml-->
+<!-- 好友昵称 -->
+<view class="head">
+    <text>{{friendList.nickName}}</text>
+</view>
+<!-- 聊天区域 -->
+<view class="message">
+    <!-- 好友消息区域，左侧 -->
+    <view class="leftMessage">
+        <view>
+            <image src="{{friendList.userPhoto}}" mode="" />
+            <text>好友好友好友好友好友</text>
+        </view>
+    </view>
+    <!-- 自己消息区域，右侧 -->
+    <view class="rightMessage">
+        <view>
+            <text>自己自己自己自己自己自己</text>
+            <image src="{{userList.userPhoto}}" mode="" />
+        </view>
+    </view>
+</view>
+<!-- 消息编辑区域 -->
+<view class="sendMessage">
+    <view>
+        <!-- bindconfirm：点击完成按钮时触发，event.detail = {value: value} -->
+        <textarea type="text" show-confirm-bar="{{false}}" confirm-type="send" 
+        confirm-hold="{{true}}" hold-keyboard="{{false}}" cursor-spacing="{{50}}" 
+        auto-height="{{true}}"
+        bindconfirm="{{handleConfirm}}" />
+        <button size="mini"><text class="iconfont icon-miaomiaofasong"></text></button>
+    </view>
+</view>

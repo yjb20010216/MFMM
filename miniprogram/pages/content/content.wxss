@@ -1,0 +1,57 @@
+/* pages/content/content.wxss */
+.content {
+    padding-top: 10rpx;
+    padding-left: 20rpx;
+}
+
+.publish {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10rpx;
+}
+
+.publishContent {
+    background: #937bf5;
+}
+
+.content textarea {
+    /* border: 1px solid #b4b5b6; */
+    width: 85%;
+    display: inline-block;
+    margin-right: 5rpx;
+    padding: 10rpx;
+}
+
+.icon-miaomiaotupian {
+    font-size: 30px;
+    vertical-align: top;
+}
+
+.contentImage {
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap;
+}
+
+.contentImage view {
+    position: relative;
+}
+
+.contentImage image {
+    width: 226rpx;
+    height: 245rpx;
+    margin-left: 10rpx;
+    padding-bottom: 10rpx;
+}
+
+.contentImage .delteImage {
+    margin-top: 47rpx;
+}
+
+.contentImage text {
+    position: absolute;
+    top: 10rpx;
+    right: 7rpx;
+    font-size: 18px;
+    color: red;
+}

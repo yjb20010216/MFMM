@@ -1,0 +1,56 @@
+/* components/removeList/removeList.wxss */
+.area {
+    width: calc(100% - 40rpx);
+    height: 100rpx;
+    margin: 20rpx;
+    position: relative;
+    border-bottom: 1px #b4b5b6 dashed;
+}
+
+.view {
+    width: calc(100% - 200rpx);
+    height: 100%;
+    position: absolute;
+    left: 110rpx;
+    top: 0;
+    line-height: 100rpx;
+    text-indent: 10rpx;
+    z-index: 2;
+    background: white;
+}
+
+image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 10rpx;
+    z-index: 1;
+}
+
+.agree {
+    width: 100rpx;
+    height: 100rpx;
+    background: #00b26a;
+    color: white;
+    position: absolute;
+    right: 0rpx;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.delete {
+    width: 100rpx;
+    height: 100rpx;
+    background: red;
+    color: white;
+    position: absolute;
+    right: 100rpx;
+    top: 0;
+    z-index: 1;
+    text-align: center;
+    line-height: 100rpx;
+}

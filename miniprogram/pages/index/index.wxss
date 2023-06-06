@@ -1,0 +1,126 @@
+/* pages/index/index.wxss */
+.index-swiper {
+    margin: 20rpx;
+    height: 300rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+    margin-top: 100rpx;
+}
+
+.index-swiper image {
+    width: 100%;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.index-tab {
+    display: flex;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    margin-bottom: 10rpx;
+    background-color: pink;
+}
+
+.index-tab view {
+    flex: 1;
+    text-align: center;
+    padding: 20rpx;
+    /* margin: 10rpx; */
+}
+
+.index-tab .active {
+    border-bottom: 1px solid red;
+    color: red;
+}
+.scrollView {
+    height: 1350rpx;
+}
+.index-list-item {
+    margin-bottom: 30rpx;
+    width: 100%;
+}
+.index-list-item .itemContent {
+    margin-bottom: 20rpx;
+}
+.index-list-item .userPhoto {
+    width: 98%;
+    overflow: hidden;
+    height: 120rpx;
+    position: relative;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+}
+
+.index-list-item .userPhotoImage {
+    height: 120rpx;
+    width: 120rpx;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 10rpx;
+}
+
+.index-list-item .textNickName {
+    position: absolute;
+    top: 5rpx;
+    font-size: 14px;
+}
+
+.index-list-item .textTime {
+    position: absolute;
+    bottom: 14rpx;
+    font-size: 13px;
+}
+
+.index-list-item .textPoint {
+    position: absolute;
+    top: 30rpx;
+    right: 41rpx;
+    color: hotpink;
+}
+
+.userContent {
+    padding: 10rpx;
+}
+
+.contentText {
+    margin-left: 70rpx;
+    margin-bottom: 10rpx;
+}
+
+.contentView {
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap;
+    margin-top: 10rpx;
+    padding-left: 20rpx;
+}
+
+.contetImage {
+    width: 226rpx;
+    height: 245rpx;
+    margin-right: 20rpx;
+    margin-right: 10rpx;
+    margin-bottom: 10rpx;
+}
+.Contentbotton {
+    border-top: 1px solid #b4b5b6;
+    width: 100%;
+    height: 70rpx;
+    line-height: 70rpx;
+    text-align: center;
+    padding-bottom: 10rpx;
+}
+.isHaveFriendListId {
+    width: 100%;
+    height: 100rpx;
+    text-align: center;
+    margin-top: 100rpx;
+}
+.isHaveFriendListId .isHaveFriendListId-text {
+    margin-left: 5rpx;
+}
+.isHaveFriendListId  .iconfont  {
+    font-size: 20px;
+}

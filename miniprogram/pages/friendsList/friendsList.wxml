@@ -1,0 +1,16 @@
+<!--pages/friendsList/friendsList.wxml-->
+<view class="friendList">
+    <view wx:for="{{ friendList }}" wx:key="indexx" wx:if="{{isfrinendList}}">
+        <view class="friendList-item">
+            <view>
+                <image src="{{ item.userPhoto }}" bindtap="handleDetail" data-id="{{item._id}}" />
+                <text bindtap="handleChatMessage" data-id="{{item._id}}">{{ item.nickName }}</text>
+            </view>
+            <text class="iconfont icon-miaomiaoyoujiantou"></text>
+        </view>
+    </view>
+    <view wx:if="{{!isfrinendList}}" class="NofriendList">
+        <text class="iconfont icon-miaomiaozanwuhaoyou-"></text>
+        <text class="NofriendList-text">暂无好友</text>
+    </view>
+</view>

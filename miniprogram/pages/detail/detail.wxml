@@ -1,0 +1,35 @@
+<!--pages/detail/detail.wxml-->
+<view class="detail">
+    <view class="detail-item">
+        <text>昵称：</text>
+        <text>{{detail.nickName}}</text>
+    </view>
+    <view class="detail-item">
+        <text>头像：</text>
+        <image src="{{detail.userPhoto}}" mode="" />
+    </view>
+    <view class="detail-item">
+        <text>个性签名：</text>
+        <text>{{detail.signature === '' ? '暂未设置个性签名' : detail.signature}}</text>
+    </view>
+    <view class="detail-item">
+        <text>手机号：</text>
+        <block wx:if="{{isFriend}}">
+            <text class="deatil-phoneNumber">{{detail.phoneNumber  === '' ? '暂未设置手机号' : detail.signature}}</text>
+            <callPhone phoneNumber="{{detail.phoneNumber}}" wx:if="{{detail.phoneNumber}}"></callPhone>
+        </block>
+        <text wx:else>仅好友可见</text>
+    </view>
+    <view class="detail-item">
+        <text>微信号：</text>
+        <block wx:if="{{isFriend}}">
+            <text class="deatil-weixinNumber">{{detail.weixinNumber  === '' ? '暂未设置微信号' : detail.signature}}</text>
+            <copyText weixinNumber="{{detail.weixinNumber}}" wx:if="{{detail.weixinNumber}}"></copyText>
+        </block>
+        <text wx:else>仅好友可见</text>
+    </view>
+    <block wx:if="{{!isHidden}}">
+        <button wx:if="{{isFriend}}">已是好友</button>
+        <button wx:else bindtap="handleAddFriend">添加好友</button>
+    </block>
+</view>

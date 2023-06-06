@@ -1,0 +1,61 @@
+<!--pages/index/index.wxml-->
+
+<wxs src="../../utils/unitFormat.wxs" module="unitFormat"></wxs>
+<wxs src="../../utils/wordSplit.wxs" module="wordSplit"></wxs>
+<wxs src="../../utils/formatDate.wxs" module="formatDate"></wxs>
+
+<search wx:if="{{usePageScroll}}"></search>
+
+<view class="index">
+
+    <swiper class="index-swiper" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{2000}}" circular="{{true}}">
+        <block wx:for="{{swiperImage}}" wx:key="index">
+            <swiper-item>
+                <image src="{{item.fileId}}" class="slide-image" />
+            </swiper-item>
+        </block>
+    </swiper>
+
+    <view class="index-tab">
+        <view class="{{ current === 'time' ? 'active' : ''}}" data-current="time" bindtap="handlecurrent">推荐</view>
+        <view class="{{ current === 'friend' ? 'active' : ''}}" data-current="friend" bindtap="handlecurrent">好友动态</view>
+    </view>
+
+    <scroll-view scroll-y="{{true}}" class="scrollView" wx:if="{{!isFriendListCurrent}}" bindscrolltolower="handleScrollToLower" refresher-enabled="{{true}}" bindrefresherrefresh="handleRefresh" 	refresher-triggered="{{isRefresh}}">
+        <!-- wx:if 为true 显示，为false 隐藏 -->
+        <view class="index-list">
+            <view class="index-list-item" wx:for="{{dataList}}" wx:key="index" wx:if="{{item.content.length}}">
+                <view wx:for="{{item.content}}" wx:for-index="contentIndex" wx:for-item="contentItem" wx:key="contentIndex" class="itemContent">
+                    <view class="userPhoto">
+                        <!-- 头像 -->
+                        <image src="{{contentItem.userPhoto}}" mode="aspectFill" bindtap="handleDetail" data-id="{{item._id}}" class="userPhotoImage" />
+                        <!-- 昵称 -->
+                        <text class="textNickName">{{wordSplit.wordSplit(contentItem.nickName)}}</text>
+                        <!-- 发布时间 -->
+                        <text class="textTime">{{formatDate.formatDate(contentItem.contentTime)}} 前发布</text>
+                        <!-- 点赞 -->
+                        <text data-id="{{item._id}}" data-contentIndex="{{contentIndex}}" bindtap="handleLinks" class="textPoint">
+                            <text class="iconfont icon-miaomiaodianzan "></text>
+                            <text>{{unitFormat.unitFormat(contentItem.link)}}</text>
+                        </text>
+                    </view>
+                    <view class="userContent">
+                        <!-- 内容 -->
+                        <text class="contentText">{{contentItem.contentWord}}</text>
+                        <!-- 内容图片 -->
+                        <view class="contentView" wx:if="{{contentItem.imageFileId.length}}">
+                            <image wx:for="{{contentItem.imageFileId}}" wx:for-index="contentImageIndex" wx:for-item="contentImageItem" src="{{contentImageItem}}" wx:key="contentImageIndex" class="contetImage" bindtap="handleBigImage" data-imageIndex="{{contentImageIndex}}" data-usreId="{{item._id}}" data-contentIndex="{{contentIndex}}" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="Contentbotton">
+                这是我的底线
+            </view>
+        </view>
+    </scroll-view>
+    <view wx:if="{{!isHaveFriendListId}}" class="isHaveFriendListId">
+        <text class="iconfont icon-miaomiaozanwuhaoyou-"></text>
+        <text class="isHaveFriendListId-text">你还没有好友发布动态哦!</text>
+    </view>
+</view>

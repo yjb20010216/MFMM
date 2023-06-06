@@ -1,0 +1,43 @@
+/* pages/friendsList/friendsList.wxss */
+.friendList {
+    margin-top: 10rpx;
+}
+
+.friendList-item {
+    height: 120rpx;
+    border-bottom: 1px #b4b5b6 dashed;
+    padding: 10rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.friendList-item view {
+    display: flex;
+    align-items: center;
+}
+
+.friendList-item image {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+}
+
+.friendList-item view text {
+    margin-left: 20rpx;
+}
+
+.NofriendList {
+    width: 100%;
+    text-align: center;
+    margin-top: 400rpx;
+}
+.NofriendList .iconfont {
+    font-size: 20px;
+}
+.NofriendList-text {
+    margin: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    margin-left: 13rpx;
+}

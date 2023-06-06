@@ -1,0 +1,18 @@
+/* pages/editUserInfo/head/head.wxss */
+image {
+    width: 200rpx;
+    height: 200rpx;
+    border-radius: 50%;
+    margin-left: 270rpx;
+    margin-bottom: 10rpx;
+}
+
+.useWeiXinPhoto {
+    background-color: #937bf5;
+    margin-bottom: 20rpx;
+}
+
+.useUserPhoto {
+    background-color: #937bf5;
+
+}

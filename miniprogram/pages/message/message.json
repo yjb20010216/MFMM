@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "removeList":"../../components/removeList/removeList"
+    },
+    "navigationBarTitleText": "消息列表"
+}

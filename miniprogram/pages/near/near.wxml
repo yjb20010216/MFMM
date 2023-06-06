@@ -1,0 +1,4 @@
+<!--pages/near/near.wxml-->
+<view class="map">
+    <map longitude="{{longitude}}" latitude="{{latitude}}" id="map" scale="14" show-location="{{isShowLocation}}" markers="{{markers}}" bindmarkertap="markertap"></map>
+</view> 

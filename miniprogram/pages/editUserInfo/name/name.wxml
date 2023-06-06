@@ -1,0 +1,16 @@
+<!--pages/editUserInfo/name/name.wxml-->
+<!-- <view>
+    <button bindtap="getUserProfile"> 获取微信昵称 </button>
+    <button bindtap="handleBtn">修改昵称</button>
+    <input type="text" value="{{nickName}}" bindinput="handleText" />
+</view> -->
+
+
+<view data-weui-theme="{{theme}}">
+    <form catchsubmit="formSubmit">
+        <view class="row">
+            <input type="nickname"  name="nickname" placeholder="请输入昵称" value="{{nickName}}" bindinput="handleText"/>
+        </view>
+        <button bindtap="handleBtn">确认修改</button>
+    </form>
+</view>

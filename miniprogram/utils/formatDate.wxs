@@ -1,0 +1,56 @@
+var formatDate = function (timestamp) {
+
+    var timezoneOffset = 8 * 60 * 60 * 1000; // 中国时区偏移量，单位为毫秒
+    timestamp = timestamp + timezoneOffset;
+    timestamp = timestamp / 1000
+    var secPerDay = 24 * 60 * 60; // 每天的秒数 
+    var secPerHour = 60 * 60; // 每小时的秒数
+    var secPerMin = 60; // 每分钟的秒数
+
+    // 计算年份
+    var year = Math.floor(timestamp / (secPerDay * 365)) + 1970;
+
+    // 计算该年份是否为闰年
+    var isLeapYear = (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+
+    // 计算该年份的天数
+    var daysInYear = isLeapYear ? 366 : 365;
+
+    // 计算该年份距离该时间戳所在年份的天数
+    var daysInPrevYears = 0;
+    for (var y = 1970; y < year; y++) {
+        daysInPrevYears += (isLeapYear ? 366 : 365);
+        isLeapYear = (y % 4 === 0 && y % 100 !== 0) || y % 400 === 0;
+    }
+    var daysInCurrentYear = Math.floor((timestamp - daysInPrevYears * secPerDay) / secPerDay);
+
+    // 计算月份和日期
+    var daysInMonth = [31, isLeapYear ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    var month = 0;
+    var day = daysInCurrentYear;
+    for (var i = 0; i < daysInMonth.length; i++) {
+        if (day < daysInMonth[i]) {
+            month = i;
+            break;
+        }
+        day -= daysInMonth[i];
+    }
+    month++;
+
+    // 计算小时、分钟和秒数
+    var hour = Math.floor((timestamp % secPerDay) / secPerHour);
+    var minute = Math.floor((timestamp % secPerHour) / secPerMin);
+    var second = Math.floor(timestamp % secPerMin);
+
+    // 返回格式化后的字符串
+    // return year + "-" + (month < 10 ? "0" : "") + month + "-" + (day < 10 ? "0" : "") + day + " " + (hour < 10 ? "0" : "") + hour + ":" + (minute < 10 ? "0" : "") + minute + ":" + (second < 10 ? "0" : "") + second;
+    return (month < 10 ? "0" : "") + month + "-" + (day < 10 ? "0" : "") + (day+1) + " " + (hour < 10 ? "0" : "") + hour + ":" + (minute < 10 ? "0" : "") + minute;
+
+
+}
+
+module.exports = {
+    formatDate: formatDate
+};
+
+

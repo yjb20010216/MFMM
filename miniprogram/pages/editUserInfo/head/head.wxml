@@ -1,0 +1,16 @@
+<!--pages/editUserInfo/head/head.wxml-->
+<!-- <view>
+    <button bindtap="getUserProfile"> 获取微信头像</button>
+    <button bindtap="handleBtn">修改头像</button>
+    <image src="{{userPhoto}}" bindtap="handleText" />
+</view> -->
+
+
+<view data-weui-theme="{{theme}}">
+    <image src="{{userPhoto}}" bindtap="handleText"></image>
+    <button open-type="chooseAvatar" bindchooseavatar="onChooseAvatar" class="useWeiXinPhoto">
+        授权使用微信头像
+    </button>
+    <button bindtap="handleBtn" class="useUserPhoto">确定修改</button>
+</view>
+

@@ -1,0 +1,4 @@
+<!--pages/editUserInfo/phone/phone.wxml-->
+<input type="number" value="{{phoneNumber}}" bindinput="handleText"/>
+<button bindtap="handleBtn">确认修改</button>
+

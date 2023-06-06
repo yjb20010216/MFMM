@@ -1,0 +1,12 @@
+/* pages/editUserInfo/weixin/weiixn.wxss */
+input {
+    border: 1px solid #b4b5b6;
+    margin: 20rpx;
+    border-radius: 5%;
+    padding-left: 10rpx;
+    padding-right: 10rpx;
+    text-align: center;
+}
+button{
+    background: #937bf5;
+}

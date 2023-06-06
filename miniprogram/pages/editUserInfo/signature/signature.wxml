@@ -1,0 +1,3 @@
+<!--pages/editUserInfo/signature/signature.wxml-->
+<input type="text" value="{{signature}}" bindinput="handleText"/>
+<button bindtap="handleBtn">确认修改</button>
